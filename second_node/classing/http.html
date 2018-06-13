@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>浏览器行为与http协议</h1>
+	1.输入网址
+	2.解析域名
+	3.浏览器发送http请求
+	<h1>http协议概念</h1>
+	<p>超文本协议</p>
+	<h1>TCP与IP协议</h1>
+	OSI  应用层 表示层 会话层 传输层 网络层  数据链路层 物理层
+	TCP/IP  应用层  传输层 网络层  网络接口层
+	网络层 IP
+	传输层  TCP        UDP
+	应用层   http  ftp  DNS SMTP
+	<h1>https</h1>
+	http默认端口 80
+	https  默认端口号  443
+	<h1>事务</h1>
+	<p>1.首先与客户端进行连接(TCP)</p>网络不通
+	<p>2.建立连接，客户端发送请求给服务器(http)</p>
+	<p>3.服务端接受请求，给与响应信息(HTTP)</p>
+	<p>4.客户端接受服务器返回的信息用过浏览器显示在用户显示屏上，断开连接</p>
+	<h1>请求与响应</h1>
+	<p>请求行组成</p>
+	<h1>响应报文</h1>
+	req
+	accept  接受
+	accept-encoding    接不接受压缩
+	connection：keep-alive  长连接  
+	host  访问网站的域名
+	user-agent  浏览器向服务器介绍自己
+	res
+	remote   dns解析后得到的IP
+	<h1>状态码</h1>
+	1XX   异步处理  后端通信与后端通信
+	2XX   成功处理
+	3XX		重定向(服务器)   本地重定向(本地缓存)
+	4XX   浏览器或者客户端操作有问题
+	5XX    服务端错误 服务端未能实现合法请求
+	<h1>http和反向代理</h1>
+	wget  安装
+	tar zxvf  nginx  解压
+</body>
+</html>
