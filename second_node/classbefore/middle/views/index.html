@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}index {{title}} {%endblock%}
+
+{% block head %}
+<link rel="stylesheet" href="stylesheet/index.css">
+{% endblock %}
+
+{% block content %}
+<p>This is just an awesome page.</p>
+{% for item in items %}
+    <li>{{ item }}</li>
+{% endfor %}
+{% endblock %}
