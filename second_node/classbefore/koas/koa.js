@@ -1,10 +1,13 @@
 var koa = require('koa');
 var app = new koa();
 app.keys = ['abc',"def"];
-app.use(function * (){
-    this.body = '123';
-    console.log(this.query.name);
-    console.log(this.request.path)
+app.use(function * (){  
+    if(this.request.path === '/test'){
+        this.body = '123';
+        console.log(this.request.query);
+    }else{
+        this.throw(404,'not found');
+    }
 })
 app.listen(3000)
 // const Koa = require('koa');
@@ -42,4 +45,10 @@ app.listen(3000)
 //this.throw
 //this.lastModified  this.etag
 //request
+
 //this.req.header this.method this.req.path 
+//this.request.type    this.request.query
+//this.req.fresh  this.request.subdomains
+
+//response
+//this.response.header
