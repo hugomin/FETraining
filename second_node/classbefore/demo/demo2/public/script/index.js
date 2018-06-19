@@ -1,0 +1,16 @@
+$("#submit").on("click",function(event){
+    console.log(111)
+    event.preventDefault();
+    $.ajax({
+        url:'/receive',
+        dataType:'json',
+        type:'GET',
+        data:{
+            username:$("#username").val(),
+            password:$("#password").val()
+        },
+        success:function(data){
+            console.log(data)
+        }
+    })
+})
