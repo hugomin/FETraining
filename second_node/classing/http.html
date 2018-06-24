@@ -9,6 +9,8 @@
 	1.输入网址
 	2.解析域名
 	3.浏览器发送http请求
+	4.服务器处理请求
+	5.服务器返回html响应
 	<h1>http协议概念</h1>
 	<p>超文本协议</p>
 	<h1>TCP与IP协议</h1>
@@ -20,6 +22,7 @@
 	<h1>https</h1>
 	http默认端口 80
 	https  默认端口号  443
+	会话层加入 ssl tsl
 	<h1>事务</h1>
 	<p>1.首先与客户端进行连接(TCP)</p>网络不通
 	<p>2.建立连接，客户端发送请求给服务器(http)</p>
@@ -42,7 +45,43 @@
 	3XX		重定向(服务器)   本地重定向(本地缓存)
 	4XX   浏览器或者客户端操作有问题
 	5XX    服务端错误 服务端未能实现合法请求
+	<h1>head只返回头部信息</h1>
+	<h1>cookie和session</h1>
+	http无状态协议
+	session  一般在内存 小数据库
+	cookie  sessionID  服务器发送的session
+	token(手机app)  可以嵌到url  只使用一次就作废  安全性更高
+	<h1>缓存</h1>
+	优点 减少请求 减少带宽消耗
+	再次请求  没过期 缓存  过期 
+	ETAG策略 IF-none-match
+	<h1>链路安全</h1>
+	链路加密  https
+	对重要数据加密
+	http1 http2
+	http2  传输二进制格式  高效 紧凑
+			   抱头压缩  降低开销  
+			   多路复用  网络
+			   服务器主动推送  ws不是基于http
 	<h1>http和反向代理</h1>
+	代理服务器放缓存  后面有高速缓存(硬盘)  循环服用DNS
+	反向代理用途
+	加密和ssl加速  
+	负载均衡 
+	 缓存静态内容  压缩  减速上传  安全  外网发布
+
+	 vps  安装步骤  centos
+	下载
+	 wget 连接
+	 tar zxvf nginx
+	 gcc(没有的话  yum install gcc)
+	 ./configure
+	yum install openssl-devel  zlib-devel
+	make  编译
+	make install  安装
+
+	配置文件
+	yum  etc   
 	wget  安装
 	tar zxvf  nginx  解压
 </body>

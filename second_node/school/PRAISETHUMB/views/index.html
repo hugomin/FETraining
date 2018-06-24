@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+{% parent %}
+    <link rel="stylesheet" href="/style/index.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/systemjs/0.21.3/system.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+    <script src="/script/index.js"></script>
+{% endblock %}
+{% block content %}
+<div class="hand" id="thumb">
+    <div class="finger"></div>
+    <div class="finger"></div>
+    <div class="finger"></div>
+    <div class="finger"></div>
+    <div class="finger thumb"></div>
+    <div class="arm"></div>
+</div>
+<span class="hide" id="animation">+1</span>
+<script src="/script/indexadd.js"></script>
+<script>
+    SystemJS.import('/script/index.js').then(function (m) {
+        $.extend({
+            thumb:m.default
+        })
+        callBack();
+    });
+
+    function callBack(){
+        var f = new $.thumb(0,$("#thumb"));
+        f.clickAction();
+    }
+</script>
+{% endblock %}
