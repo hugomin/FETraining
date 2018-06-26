@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>linux预备知识</title>
+</head>
+<body>
+    <h1>vi编辑器</h1>
+    <p>i  esc  :q!</p>
+    <p>查询   /key  enter   n下一个</p>
+    <h1>服务管理命令</h1>
+    systemctl  start  matiadb(服务名)
+    systemctl  status  matiadb(服务名)
+    systemctl  stop  matiadb(服务名)
+    systemctl  disable  matiadb(服务名) 不允许开机启动 
+    systemctl  enable  matiadb(服务名) 开机自启动
+    <h1>ip</h1>
+    <p>获取ip地址  ipaddr</p>
+    <p>ip route    看当前网络是不是合理</p>
+    <h1>下载命令  第一加第三方源  源码编译</h1>
+    <p>curl  协议层</p>
+    <p>wget</p>
+    <p>yum  app-get是官方源的文件</p>
+    <h1>帮助命令</h1>
+    <p>wget --help</p>
+    <p>man   wget   :q(退出)</p>
+    <h1>不小心 ctrl+S</h1>
+    <p>ctrl+a光标最先   ctrl+e光标最后</p>
+
+    <h1>进程 线程 协程</h1>
+    <p>程序  静态</p>
+    <p>进程  动态</p>
+    <p>查看进程 ps   ps aux  </p>
+    <p>线程 共享进程的资源</p>
+    <p>协程  单核</p>
+    <p>io(输入输出型 只要不是内存和cpu来回打转 路由器 交换机 服务器 缓存服务器redis)密集型  多进程-多线程-事件驱动 - 协程</p>
+    <p>CPU密集型(超算  计算)多进程 - 多线程</p>
+    <p>调度和切换时间 进程 》线程》协程</p>
+    <p>串行任务 单线程做   并行任务 多线程  </p>
+    <h1>进程与线程</h1>
+    <p>多进程机制</p>
+    <p>多线程机制</p>
+    <p>提供协调机制</p>
+</body>
+</html>

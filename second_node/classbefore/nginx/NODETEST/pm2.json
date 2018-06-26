@@ -1,0 +1,11 @@
+{
+    "apps" : [{
+      "name"       : "node-test",
+      "script"     : "app.js",
+      "instances"  : 4,
+      "exec_mode"  : "cluster_mode",
+      "watch"      : true,
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "out_file"   : "log/node-app.stdout.log"
+    }]
+  } 

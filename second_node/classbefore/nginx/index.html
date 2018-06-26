@@ -15,5 +15,47 @@
 
     端口占用
     nginx -s stop
+    mac安装步骤
+    1.打开https://brew.sh/index 输入命令就好了
+    2.brew search nginx  brew install nginx
+    3.brew info nginx
+    4.nginx -v
+    5.sudo brew services start nginx(默认端口8080)
+    如果装了jenkins
+    sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist
+    systemctl start jenkins 
+    6.sudo brew serveice stop nginx  关闭
+    7.nginx -s reload  nginx -s stop 
+
+worker_processes 4:
+events{}
+http{
+    upstream firsttest{
+        ip_hash;//落到机器上就一直在机器上
+        server 192.168.0.21  weight=2;
+        server 192.168.0.31;
+    }
+    server{
+        listen  8080；
+        location /{
+            root   html;   //默认在usr/local/var/www/html
+            index  index.html index.htm;
+            proxy_pass http://firsttest;
+        }
+    }
+}
+
+
+代理生效  nginx -t
+        nginx -c     对其他文件
+1、什么是反向代理与负载均衡
+2.Nginx负载均衡的实现
+3.http Upstream模块
+
+<h1>pm2 动态监测文件</h1>
+<p>能够动态的监控文件的上传0秒启动</p>
+<p>能够负载均衡cpu</p>
+<p>内存的使用过多了  cpu调度太频繁</p>
+<p>restart个数</p>
 </body>
 </html>
