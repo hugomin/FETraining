@@ -1,3 +1,6 @@
 require("../style/index.less");
-const  data = 123;
-console.log(data);
+const data = require("./data.es");
+const  test = ()=>{
+    console.log(123)
+}
+test();
