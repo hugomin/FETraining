@@ -5,9 +5,11 @@ module.exports = function(grunt){
           options: {
             banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
           },
-          build: {
-            src: 'src/<%= pkg.name %>.js',
-            dest: 'build/<%= pkg.name %>.min.js'
+          my_target: {
+            files: {
+              'dest/index.min.js': ['src/index.js'],
+              'dest/main.min.js': ['src/main.js']
+            }
           }
         },
         concat: {
@@ -17,7 +19,7 @@ module.exports = function(grunt){
             },
             dist: {
               // the files to concatenate
-              src: ['src/*.js'],
+              src: ['dest/*.js'],
               // the location of the resulting JS file
               dest: 'dist/<%= pkg.name %>.js'
             }

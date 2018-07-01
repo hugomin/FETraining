@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edtemge">
+    <title>Document</title>
+</head>
+<body>
+    <template id="template"><p>简单</p></template>
+    <script>
+        let num = 3;
+        const frament = document.getElementById("template").content.cloneNode(true);
+        console.log(frament)
+        while (num-- > 1){
+            frament.firstChild.before(frament.firstChild.cloneNode(true));
+            frament.firstChild.textContent += frament.lastChild.textContent;
+        }
+        document.body.appendChild(frament);
+    </script>
+</body>
+</html>

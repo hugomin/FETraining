@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="import" href="./test.html">
+	<title></title>
+</head>
+<body>
+	webcomponents
+	概念
+	Web Components是一套不同的技术，允许您创建可重用的定制元素（它们的功能封装在您的代码之外）并且在您的web应用中使用它们。
+	准确来说是一套规范
+	主要包括四种技术
+	Custom Elements  自定义元素
+	HTML Imports      html引用
+	HTML Temolates   沙箱
+	Shadow Dom      沙箱环境的dom
+	<script type="text/javascript">
+	class ButtonHelloElement extends HTMLElement{
+			constructor(){
+				super();
+				this.addEventListener('click',()=>{
+					console.log('button-hello');
+				})
+			}
+
+	} 
+	customElements.define('button-hello',ButtonHelloElement)
+</script>
+<button-hello>测试3</button-hello>
+<script>
+	const link = document.querySelector("link[rel=import]");
+	const header = link.import;
+	const logo = header.querySelector('.logo')
+	console.log(logo.innerHTML);
+</script>
+</body>
+</html>
