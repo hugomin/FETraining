@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./x-tag.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <x-clock></x-clock>
+    <x-frankenstein></x-frankenstein>
+</body>
+</html>
+<script>
+xtag.create('x-clock', class extends XTagElement {
+  connectedCallback () {
+    this.start();
+  }
+  start (){
+    this.update();
+    this._interval = setInterval(() => this.update(), 1000);
+  }
+  stop (){
+    this._interval = clearInterval(this._data.interval);
+  }
+  update (){
+    this.textContent = new Date().toLocaleTimeString();
+  }
+  'tap::event' (){
+    if (this._interval) this.stop();
+    else this.start();
+  }
+});
+xtag.register('x-frankenstein', {
+  lifecycle:{
+    created: function(){
+      alert("Look! It's moving. It's alive!");
+    }
+  }
+});
+</script>
