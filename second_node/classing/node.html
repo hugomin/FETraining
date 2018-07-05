@@ -1,61 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>大规模nodejs项目的架构与优化</title>
+    <meta charset="UTF-8">
+    <title>大规模nodejs项目的架构与优化</title>
 </head>
+
 <body>
-	<h1>java+node</h1>
-	<p>vue -SSR</p>
-	<p>node  proxy(代理层 BFF)  socket</p>
-	<h1>nodeJS异步IO原理浅析及优化方案</h1>
-	<p>异步的好处  消除阻塞  时间变少  </p>
-	<p>IO是昂贵的 分布式IP是更昂贵的</p>
-	<p>nodeJS  适用于IO密集型  不适用于CPU密集型</p>
-	写法  和  
-	<h1>nodeJS内存管理机制及内存优化</h1>
-	<h1>大规模node站点结构原理分析</h1>
-	<h1>服务器集群管理与node集群的应用</h1>
-	<h1>node控制异步手段</h1>
-	<p>step  wind  bigpipe q.js</p>
-	<p>async awit</p>
-	<p>promise</p>
+    <h1>java+node</h1>
+    <p>vue -SSR</p>
+    <p>node proxy(代理层 BFF) socket</p>
+    <h1>nodeJS异步IO原理浅析及优化方案</h1>
+    <p>异步的好处 消除阻塞 时间变少 </p>
+    <p>IO是昂贵的 分布式IP是更昂贵的</p>
+    <p>nodeJS 适用于IO密集型 不适用于CPU密集型</p>
+    写法 和
+    <h1>nodeJS内存管理机制及内存优化</h1>
+    <h1>大规模node站点结构原理分析</h1>
+    <h1>服务器集群管理与node集群的应用</h1>
+    <h1>node控制异步手段</h1>
+    <p>step wind bigpipe q.js</p>
+    <p>async awit</p>
+    <p>promise</p>
+    uv pv 容错 性能
+    <h1>内存的管理与优化</h1> Process.memoryUsage 查看内存使用情况 垃圾回收机制 增量回收 新生代空间存活时间较短 老生代存活时间长 Scavenge 1.from(新写) to() 2.from(不用) to(用的) 3.to() from() 4.a 老生代空间 mark-Sweep Mark—compact 内存泄漏问题 1.无限制增长数组 2.无限制设置属性和值 3.任何模块内私有变量和方法 a=null 4.大循环 无GC
+    <h1>大规模结构站点原理分析</h1> 1.yii ioc 上线 前端工程化搭载动态文件 map分析 压缩打包合并至cdn 单侧 压测性能分析工具发现bug 编写nginx-conf pm2 启动应用程序小流量灰度上线 修复bug
+    <h1>多线程</h1> master主进程 fork创造主从进程 round-robin 轮叫调度 PM2 带有负载均衡功能的node应用的进程管理器 服务器集群 Nagios qps uv过千万 容错
+    <h1>上线流程</h1>
+</body>
 
-	uv pv
-	<h1>内存的管理与优化</h1>
-	Process.memoryUsage  查看内存使用情况
-	垃圾回收机制  增量回收  新生代空间存活时间较短  老生代存活时间长
-	Scavenge  
-	1.from(新写)  to()
-	2.from(不用)  to(用的)
-	3.to()  from()
-	4.a 老生代空间
-	mark-Sweep  Mark—compact
-
-	内存泄漏问题
-	1.无限制增长数组  
-	2.无限制设置属性和值
-	3.任何模块内私有变量和方法 a=null
-	4.大循环 无GC 
-
-	<h1>大规模结构站点原理分析</h1>
-	1.yii  ioc
-	上线 
-	前端工程化搭载动态文件 map分析 压缩打包合并至cdn
-	单侧 压测性能分析工具发现bug
-	编写nginx-conf
-	pm2 启动应用程序小流量灰度上线 修复bug
-
-	<h1>多线程</h1>
-	master主进程 fork创造主从进程
-	round-robin  轮叫调度 
-	PM2  带有负载均衡功能的node应用的进程管理器
-	服务器集群
-	Nagios   qps
-	uv过千万
-	容错
-
-	<h1>上线流程</h1>
-	
- </body>
 </html>
+<script>
+async function test() {
+    console.log( "hello" )
+    await sleep( 1000 ).then( res => { console.log( 123 ) } )
+    console.log( "word" )
+}
+
+function sleep( ms ) {
+    return new Promise( ( resolve ) => {
+        setTimeout( resolve, ms )
+    } )
+}
+test()
+
+var a = [ 1, 2, 3 ]
+var b = [ ...a ];
+console.log( b )
+</script>
