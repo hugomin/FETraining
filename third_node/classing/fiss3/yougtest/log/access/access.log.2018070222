@@ -1,0 +1,7 @@
+::1 - - [02/Jul/2018:22:20:47 ] "GET / HTTP/1.1" 404 13 - - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 7.996
+::1 - - [02/Jul/2018:22:20:47 ] "GET /favicon.ico HTTP/1.1" 404 24 http://localhost:8085/ - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 1.476
+::1 - - [02/Jul/2018:22:21:38 ] "GET / HTTP/1.1" 200 - - - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 24.601
+::1 - - [02/Jul/2018:22:30:16 ] "GET /index HTTP/1.1" 200 - - - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 3.400
+::1 - - [02/Jul/2018:22:30:21 ] "GET /book HTTP/1.1" 200 10 - - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 1.407
+::1 - - [02/Jul/2018:22:32:06 ] "GET /home/book HTTP/1.1" 200 10 - - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 1.106
+::1 - - [02/Jul/2018:22:32:11 ] "GET /home/index HTTP/1.1" 200 - - - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36 2.623
