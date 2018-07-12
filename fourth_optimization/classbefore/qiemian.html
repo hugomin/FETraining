@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向切面编程</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function test(b){
+		console.log(b)
+		return 'ss';
+	}
+
+	Function.prototype.before = function(fn){
+		var self = this;
+		return function(){
+			if(fn.apply(self,arguments) ===false){
+				return false;
+			}	
+			return self.apply(self,arguments)
+		}
+		
+	}
+
+	Function.prototype.after = function(fn){
+		var self = this;
+		return function(){
+			var result = self.apply(self,arguments);
+			if(result === false){
+				return false;
+			}
+			fn.apply(self,arguments);
+			return result;
+		}
+	}
+//你要统计一下当前的所有函数 谁耗时最长
+//默认函数被执行2遍  test作为中转
+//before 回调和before一起送到after去
+//after after和test一起送到before去
+const ss = test.before(function(){
+	console.log(1)
+}).after(function(){
+	console.log(3)
+})(2)
+console.log(ss)
+test.after(function(){
+	console.log(3);
+}).before(function(){
+	console.log(1)
+})(2) 
+</script>
