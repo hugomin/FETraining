@@ -31,17 +31,27 @@
     <p>一对多 1个域名对多个ip地址 轮转解析</p>
     <p>顶级域名 www.baidu.com</p>
     <p>二级域名 ab.www.baidu.com</p>
-    <p>根服务器  DNS依赖于服务器</p>
-    <p>域名劫持   旁路服务器</p>
-    <p>host    hosts</p>
-    <p>DNS  配置项   SOA 起始授权记录   A级路  CNAME 别名记录   NS服务器记录   MX邮件记录</p>
+    <p>根服务器 DNS依赖于服务器</p>
+    <p>域名劫持 旁路服务器</p>
+    <p>host hosts</p>
+    <p>DNS 配置项 SOA 起始授权记录 A级路 CNAME 别名记录 NS服务器记录 MX邮件记录</p>
     <h1>TCP三次握手和四次挥手</h1>
-    <p>1. 发送请求   2 确认请求   3.确认客户端收到了请求</p>
-    <p>1. 客户端告诉服务器断开  2.服务器确认  3.服务器告诉客户端断开   4.客户端确认 </p>
-    <h1>CDN</h1>
+    <p>1. 客户端发送请求 2 服务端向客户端发送响应请求请求 3.确认客户端收到了请求</p>
+    <p>1. 客户端告诉服务器断开 2.服务器确认 3.服务器告诉客户端断开 4.客户端确认 </p>
+    <h1>CDN </h1>
+    <p>负载均衡的一种方案</p>
+    <p>就近原则 和 优先原则</p>
     <h1>缓存机制</h1>
-    <p>作用 减少网络开销</p>
-    <p>浏览器缓存机制</p>
+    <p>作用 减少带宽消耗 减少响应延迟</p>
+    <p>缓存协商两种策略</p>
+    <h3>Etag  Last-modified愿不愿意保存过去的版本</h3>
+    <h3>通过expires cache-control控制</h3>
+    <h4>etag/if-none-match策略</h4>
+    <p>Etag 服务器产生 产生唯一ID</p>
+    <p>if-none-match </p>
+    <h4>Last-modified/if-mdified-since</h4>
+    <p>Last-modified 服务器产生 </p>
+    <p>if-mdified-since 客户端产生</p>
 </body>
 
 </html>
