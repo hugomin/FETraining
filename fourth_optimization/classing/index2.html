@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>前端性能优化</title>
+	<style>
+		.container{
+			position: relative;
+			min-height: 400px;
+		}
+		.ball{
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			box-shadow: 0 0 5px rgba(0,0,0,0.75)
+		}
+		.ball-running{
+			animation: run-around 4s infinite;
+		}
+		@keyframes run-around{
+			0%{
+				/*	top:0;
+					left: 0;*/
+				transform: translate(0,0);
+			}
+			25%{
+			transform: translate(200px,0);
+			}
+			50%{
+			transform: translate(200px,200px);
+			}
+			75%{
+				transform: translate(0,200px);
+			}
+			100%{
+				transform: translate(0,0);
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- <h1>小 进行压缩</h1>
+	<p>1.html css JS 页面 压缩 YUI Compressor合并   gzip<  sdch压缩方式/p>
+	<p>2.雅虎军规</p>
+	<p>3. 资源压缩   字体压缩  http强缓 etag  jquery.js  react vue</p>
+	<p>4. 缓存业务文件 Local Storage不能超过2.5M  激活的js</p>
+	<p>5.localstorage 扩容</p>
+	<p>Service workers  决定从本地拿还是从服务器端取</p>
+	<p>cdn  5个  并发ajax不能那么多  rel='dns-prefetch'</p>
+	<p>6.NetworkInformation   userAgent</p>
+	<p>gpu.js</p>
+	<p>7.拿到用户的网速   1.h5 navigator.connection (浏览器自带)  时差  图片 image属性 多普勒测试 3.performanceTiming</p>
+	<p>7.1  多普勒的测速方式</p>
+	<p>canvas(手机性能)和png(网络资源)   信息安全  客户端服务 wise</p>
+	<h1>网页的渲染过程</h1>
+	<p>1.获取dom元素 分割成多个层</p>
+	<p>2.对每个图层的节点计算样式结果(Recalculate style)</p>
+	<p>3.为每个节点生成图形和位置 layout</p>
+	<p>4.将每个节点绘制并填充到图形位置中</p>
+	<p>5.图层作为文理上传GPU</p> 
+	<p>6.符合条件的多图层生成屏幕的图像 Composite Layers </p>
+	<h1>哪些元素会生成独立的层</h1>
+	<p>根元素   position   transform  半透明   canvas  video  overfllow  滤镜</p>
+	<p>css3d   video gpu.js webgl   transform  css滤镜 </p>
+	<p>FPS meter</p>
+	<p>Layer borders</p>
+	<p>重排  一定引起重绘  删除  位置 大小 盒子模型  offsetTop  offsetLeft  scrollTop  width</p>
+	<p>1.跳过优化  读取offset  scrollTop  </p>
+	<p>2.删除  位置 大小 盒子</p>
+	<p>3. 读写分离   下一帧去操作    requestAnimationFrame  fastdom</p>
+	<p>重绘  border-radius  box-shadow   color  </p>
+	<h1>GPU CPU</h1>
+	相同之处 ：两者都是总线和外界的联系 有自己的缓存体系 有数据和逻辑的运算单元
+	两者都是为了计算任务 而生
+	不同之处  cpu主要负责操作系统和应用程序  GPU主要跟显示相关
+	GPU的活 cpu都能干 但是效率低下
+	<h1>html 白屏  SSR+SPA</h1>
+	
+-->
+<div class="container">
+	<div class="ball" id='ball'></div>
+</div>
+</body>
+<script>
+		var balls = document.getElementById('ball')
+		balls.classList.add('ball');
+		balls.classList.add("ball-running");
+</script>
+</html>
